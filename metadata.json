@@ -1,0 +1,6 @@
+{
+  "name": "Snow IT Expert Institute",
+  "description": "IT Training Institute with Placement Assistance featuring career tracks in IT Process Management, ServiceNow Development, and Applied GenAI & Data Science.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
