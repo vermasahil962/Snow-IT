@@ -38,21 +38,21 @@ export const MentorsSection: React.FC<MentorsSectionProps> = ({ onOpenEnquiry })
               >
                 <div className="space-y-5">
                   {/* Avatar & Name Header */}
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-md border-2 border-teal-500/40 shrink-0">
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-18 h-18 rounded-full p-1 bg-gradient-to-tr from-teal-400 to-cyan-400 shadow-lg shrink-0">
                       <img
                         src={
                           isLavi
-                            ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80'
+                            ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
                             : isDisha
-                            ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80'
-                            : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80'
+                            ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                            : 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
                         }
                         alt={`${mentor.name} - ${mentor.track}`}
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover object-center rounded-full bg-slate-800"
                       />
-                      <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-slate-900 rounded-full"></div>
+                      <div className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full"></div>
                     </div>
                     <div>
                       <h3 className="text-xl font-black text-white group-hover:text-teal-300 transition-colors">

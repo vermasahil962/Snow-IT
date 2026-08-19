@@ -28,18 +28,18 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({ onOpenEnquiry })
     setCurrentIndex((prev) => (prev === filteredStories.length - 1 ? 0 : prev + 1));
   };
 
-  // Indian candidate portraits mapped by ID / index
+  // Verified Indian candidate portraits with face-centered crop
   const candidateAvatars: Record<string, string> = {
-    '1': 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80', // Priya Sharma
-    '2': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80', // Rohan Kulkarni
-    '3': 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80', // Ananya Roy
-    '4': 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80', // Vikas Verma
-    '5': 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80', // Siddharth Nair
-    '6': 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=300&q=80', // Megha Patel
+    '1': 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=300&h=300&q=80', // Priya Sharma
+    '2': 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=300&h=300&q=80', // Rohan Kulkarni
+    '3': 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=300&h=300&q=80', // Ananya Roy
+    '4': 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces&w=300&h=300&q=80', // Vikas Verma
+    '5': 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&crop=faces&w=300&h=300&q=80', // Siddharth Nair
+    '6': 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces&w=300&h=300&q=80', // Megha Patel
   };
 
   const currentStory = filteredStories[currentIndex] || filteredStories[0];
-  const avatarSrc = candidateAvatars[currentStory?.id] || 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80';
+  const avatarSrc = candidateAvatars[currentStory?.id] || 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=300&h=300&q=80';
 
   return (
     <section id="success-stories" className="py-16 lg:py-24 bg-white relative">
@@ -212,14 +212,14 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({ onOpenEnquiry })
                 {/* Candidate Info Header */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-[#169BA2] shadow-md shrink-0 bg-slate-100">
+                    <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-tr from-teal-400 to-cyan-400 shadow-md shrink-0">
                       <img
                         src={avatarSrc}
                         alt={currentStory.candidateName}
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover object-center rounded-full bg-slate-100"
                       />
-                      <div className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></div>
+                      <div className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></div>
                     </div>
 
                     <div>

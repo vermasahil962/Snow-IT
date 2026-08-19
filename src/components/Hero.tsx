@@ -50,19 +50,18 @@ export const Hero: React.FC<HeroProps> = ({
               </button>
 
               {/* CTA 2 - Secondary: Talk to a Career Counsellor */}
-              <a
-                href="tel:+919560721315"
-                className="px-6 py-3.5 text-base font-bold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-teal-400/60 rounded-xl transition-all flex items-center justify-center gap-3 backdrop-blur-sm group shadow-md"
-                title="Call Career Counsellor at +91 95607 21315"
+              <button
+                onClick={onOpenCounsellorModal}
+                className="px-6 py-4 text-base font-bold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-teal-400/60 rounded-xl transition-all flex items-center justify-center gap-3 backdrop-blur-sm group shadow-md cursor-pointer"
+                title="Talk to Career Counsellor"
               >
                 <div className="w-9 h-9 rounded-lg bg-teal-500/20 text-teal-300 flex items-center justify-center group-hover:bg-teal-400 group-hover:text-slate-900 transition-colors shrink-0">
                   <PhoneCall className="w-4 h-4 animate-pulse" />
                 </div>
-                <div className="text-left">
-                  <span className="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider leading-tight">Talk to a Career Counsellor</span>
-                  <span className="block text-sm sm:text-base font-black text-teal-300 group-hover:text-teal-200">Call +91 95607 21315</span>
-                </div>
-              </a>
+                <span className="text-sm sm:text-base font-bold text-slate-200 group-hover:text-white">
+                  Talk to Career Counsellor
+                </span>
+              </button>
             </div>
 
             {/* Interactive Track Quiz Teaser */}
@@ -81,9 +80,9 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4">
               {HERO_CONTENT.trustHighlights.map((item, idx) => (
                 <div key={idx} className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-teal-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                    <span>{item.label}</span>
+                  <div className="flex items-start gap-1.5 text-xs font-bold text-teal-300">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
+                    <span className="whitespace-pre-line leading-snug">{item.label}</span>
                   </div>
                   <p className="text-[11px] text-slate-400 font-medium leading-tight">
                     {item.sub}
@@ -118,25 +117,25 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Overlapping Indian Mentor Avatars */}
                 <div className="flex items-center -space-x-2">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
                     alt="Mentor Lavi - ITSM"
                     title="Mentor Lavi - IT Process Manager"
                     referrerPolicy="no-referrer"
-                    className="w-8 h-8 rounded-full border-2 border-slate-800 object-cover object-top"
+                    className="w-9 h-9 rounded-full border-2 border-slate-900 object-cover object-center bg-slate-800"
                   />
                   <img
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&q=80"
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
                     alt="Mentor Disha - ServiceNow"
                     title="Mentor Disha - ServiceNow Developer"
                     referrerPolicy="no-referrer"
-                    className="w-8 h-8 rounded-full border-2 border-slate-800 object-cover object-top"
+                    className="w-9 h-9 rounded-full border-2 border-slate-900 object-cover object-center bg-slate-800"
                   />
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
                     alt="Mentor Aashish Sir - GenAI"
                     title="Mentor Aashish Sir - GenAI & Data Science"
                     referrerPolicy="no-referrer"
-                    className="w-8 h-8 rounded-full border-2 border-slate-800 object-cover object-top"
+                    className="w-9 h-9 rounded-full border-2 border-slate-900 object-cover object-center bg-slate-800"
                   />
                 </div>
               </div>

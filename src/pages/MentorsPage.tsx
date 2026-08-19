@@ -135,17 +135,26 @@ export const MentorsPage: React.FC<MentorsPageProps> = ({
                   </div>
                 </div>
 
-                {/* Mentor Highlight Badge Card */}
-                <div className="lg:col-span-4 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white p-6 rounded-2xl border border-slate-800 space-y-4 text-center">
-                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-[#169BA2] to-teal-400 p-1 shadow-lg shadow-teal-500/20">
-                    <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-xl font-black text-white">
-                      {mentor.name.substring(0, 2).toUpperCase()}
-                    </div>
+                {/* Mentor Highlight Badge Card with Indian Mentor Portrait */}
+                <div className="lg:col-span-4 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white p-6 rounded-3xl border border-slate-800 space-y-4 text-center">
+                  <div className="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-tr from-teal-400 to-cyan-400 shadow-xl">
+                    <img
+                      src={
+                        mentor.id === 'lavi'
+                          ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                          : mentor.id === 'disha'
+                          ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                          : 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                      }
+                      alt={mentor.name}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-center rounded-full bg-slate-800"
+                    />
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-white">{mentor.name}</h3>
-                    <p className="text-xs text-teal-300">{mentor.role}</p>
+                    <h3 className="text-xl font-black text-white">{mentor.name}</h3>
+                    <p className="text-xs font-bold text-teal-300">{mentor.role}</p>
                   </div>
 
                   <div className="border-t border-slate-800 pt-3 text-left space-y-2 text-xs text-slate-300">

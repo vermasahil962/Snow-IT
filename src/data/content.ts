@@ -10,10 +10,10 @@ export const HERO_CONTENT = {
   ctaPrimary: "Enquire Now",
   ctaSecondary: "Talk to a Career Counsellor: Call +91 95607 21315",
   trustHighlights: [
-    { label: "Live Google Meet Batches", sub: "Mon – Sat Interactive" },
-    { label: "No Coding Track Available", sub: "IT Process Manager (21 Days)" },
-    { label: "5 to 40+ LPA Packages", sub: "Based on Selected Track" },
-    { label: "End-to-End Placement", sub: "Till You Get Placed" },
+    { label: "Live Google Meet\nBatches", sub: "Mon – Sat Interactive" },
+    { label: "No Coding Track\nAvailable", sub: "IT Process Manager (21 Days)" },
+    { label: "5 to 40+ LPA\nPackages", sub: "Based on Selected Track" },
+    { label: "End-to-End\nPlacement", sub: "Till You Get Placed" },
   ]
 };
 

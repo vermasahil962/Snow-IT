@@ -149,27 +149,50 @@ export const PlacementsPage: React.FC<PlacementsPageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SUCCESS_STORIES.slice(0, 3).map((t) => (
-              <div key={t.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:border-[#169BA2] transition-colors">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-black rounded-lg">
-                    {t.ctc} ({t.hike})
-                  </span>
-                  <span className="text-[11px] text-slate-400 font-bold">{t.batch}</span>
-                </div>
+            {SUCCESS_STORIES.slice(0, 3).map((t, idx) => {
+              const avatars = [
+                'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+              ];
+              const avatar = avatars[idx % avatars.length];
 
-                <div>
-                  <h3 className="text-base font-black text-slate-900">{t.candidateName}</h3>
-                  <p className="text-xs text-slate-500">{t.prevRole} ➔ <strong className="text-teal-700">{t.roleTitle}</strong></p>
-                </div>
+              return (
+                <div key={t.id} className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:border-[#169BA2] transition-colors flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={avatar}
+                          alt={t.candidateName}
+                          referrerPolicy="no-referrer"
+                          className="w-13 h-13 rounded-full object-cover object-center border-2 border-teal-500/60 shadow-xs"
+                        />
+                        <div>
+                          <h3 className="text-base font-black text-slate-900">{t.candidateName}</h3>
+                          <span className="text-[11px] text-slate-400 font-bold">{t.batch}</span>
+                        </div>
+                      </div>
+                      <span className="px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-black rounded-lg shrink-0">
+                        {t.hike}
+                      </span>
+                    </div>
 
-                <p className="text-xs text-slate-600 italic">"{t.quote}"</p>
+                    <div>
+                      <p className="text-xs text-slate-500">{t.prevRole} ➔ <strong className="text-teal-700">{t.roleTitle}</strong></p>
+                      <p className="text-sm font-extrabold text-slate-900 mt-0.5">Placed CTC: {t.ctc}</p>
+                    </div>
 
-                <div className="pt-2 border-t border-slate-100 text-xs font-extrabold text-slate-800">
-                  Company: <span className="text-[#169BA2]">{t.companyName}</span>
+                    <p className="text-xs text-slate-600 italic">"{t.quote}"</p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 text-xs font-extrabold text-slate-800 flex items-center justify-between">
+                    <span>Company: <span className="text-[#169BA2]">{t.companyName}</span></span>
+                    <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">Verified</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

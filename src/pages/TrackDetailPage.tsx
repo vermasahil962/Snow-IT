@@ -135,24 +135,39 @@ export const TrackDetailPage: React.FC<TrackDetailPageProps> = ({
 
             {/* Right Hero Visual Card */}
             <div className="lg:col-span-4 hidden lg:block">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900 group">
-                <img
-                  src={
-                    track.id === 'it-process-manager'
-                      ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'
-                      : track.id === 'servicenow-developer'
-                      ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80'
-                      : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'
-                  }
-                  alt={`Lead Mentor: ${track.mentorName}`}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                  <span className="text-[11px] font-bold text-teal-300 uppercase tracking-wider">Live Mentor: {track.mentorName}</span>
-                  <p className="text-sm font-extrabold text-white">{track.batchSchedule.nextBatch}</p>
-                  <p className="text-xs text-slate-300">{track.salaryRange} Expected Package</p>
+              <div className="rounded-3xl p-6 border border-slate-700/80 shadow-2xl bg-slate-900/90 backdrop-blur-md space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-teal-400 to-cyan-400 shadow-md shrink-0">
+                    <img
+                      src={
+                        track.id === 'it-process-manager'
+                          ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                          : track.id === 'servicenow-developer'
+                          ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                          : 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=300&h=300&q=80'
+                      }
+                      alt={`Lead Mentor: ${track.mentorName}`}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-center rounded-full bg-slate-800"
+                    />
+                    <div className="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full"></div>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-teal-300 uppercase tracking-wider">Lead Mentor</span>
+                    <h3 className="text-lg font-black text-white">{track.mentorName}</h3>
+                    <p className="text-xs text-slate-300">Live Hands-on Trainer</p>
+                  </div>
+                </div>
+
+                <div className="p-3.5 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-1.5 text-xs text-slate-300">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Next Live Batch:</span>
+                    <span className="font-bold text-teal-300">{track.batchSchedule.nextBatch}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Target Package:</span>
+                    <span className="font-bold text-amber-300">{track.salaryRange}</span>
+                  </div>
                 </div>
               </div>
             </div>

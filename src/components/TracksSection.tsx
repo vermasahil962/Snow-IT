@@ -83,14 +83,14 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
                         <img
                           src={
                             track.mentorName.includes('Lavi')
-                              ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80'
+                              ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=120&h=120&q=80'
                               : track.mentorName.includes('Disha')
-                              ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&q=80'
-                              : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
+                              ? 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=120&h=120&q=80'
+                              : 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=120&h=120&q=80'
                           }
                           alt={track.mentorName}
                           referrerPolicy="no-referrer"
-                          className="w-4 h-4 rounded-full object-cover object-top"
+                          className="w-4 h-4 rounded-full object-cover object-center bg-slate-200"
                         />
                         Mentor: {track.mentorName}
                       </span>

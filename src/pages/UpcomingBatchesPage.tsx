@@ -190,12 +190,45 @@ export const UpcomingBatchesPage: React.FC<UpcomingBatchesPageProps> = ({
           ))}
         </div>
 
-        {/* Why Batch Size is Limited */}
-        <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-          <h3 className="text-lg font-black text-slate-900">Why Snow IT Expert Caps Batch Sizes</h3>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Large edtech platforms put 300+ students in one lecture where no one can ask questions. In our Google Meet batches, mentors know every candidate by name, review your individual assignments, and tailor the mock interview simulation to your exact career history.
-          </p>
+        {/* Why Batch Size is Limited with Live Google Meet Visual */}
+        <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-4 relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 shadow-md border border-slate-200">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80"
+                alt="Interactive Small Batch Mentorship in India"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <span className="text-[11px] font-bold text-teal-300">Live 1-on-1 Doubt Clearing</span>
+                <p className="text-[10px] text-slate-300">Screen sharing & live debugging in every session</p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-8 space-y-3">
+              <span className="text-xs font-black uppercase tracking-wider text-[#169BA2] bg-teal-50 px-3 py-1 rounded-full border border-teal-200/80 inline-block">
+                Strict Quality Standards
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+                Why Snow IT Expert Caps Batch Sizes at 15–20 Candidates
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Large edtech platforms put 300+ students in one lecture where no one can ask questions. In our Google Meet batches, mentors know every candidate by name, review your individual assignments, and tailor the mock interview simulation to your exact career history.
+              </p>
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-0.5">
+                  <div className="text-sm font-black text-[#169BA2]">100% Live</div>
+                  <div className="text-xs font-bold text-slate-800">Google Meet Interaction</div>
+                </div>
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-0.5">
+                  <div className="text-sm font-black text-[#1E70BF]">Full Access</div>
+                  <div className="text-xs font-bold text-slate-800">Class Recordings & Notes</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

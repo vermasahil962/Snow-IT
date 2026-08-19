@@ -108,40 +108,53 @@ export const AboutCompanyPage: React.FC<AboutCompanyPageProps> = ({
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 p-6 sm:p-8 rounded-3xl text-white shadow-xl space-y-6 border border-slate-800">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
-                <ShieldCheck className="w-5 h-5" />
+          <div className="lg:col-span-5 space-y-6">
+            {/* Indian Mentorship Live Classroom Visual */}
+            <div className="relative rounded-3xl overflow-hidden border border-slate-700 shadow-xl bg-slate-900 aspect-[16/10] group">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                alt="Live Interactive Mentorship at Snow IT Expert Institute"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              
+              <div className="absolute top-3 left-3 px-3 py-1 bg-slate-900/90 backdrop-blur-md rounded-full border border-teal-500/40 text-teal-300 text-[11px] font-black flex items-center gap-1.5 shadow-md">
+                <Video className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Google Meet Live Batches</span>
               </div>
-              <div>
-                <h3 className="text-base font-bold text-white">The Snow IT Commitment</h3>
-                <p className="text-xs text-slate-400">Our promise to every enrolled candidate</p>
+
+              <div className="absolute bottom-3 left-4 right-4 text-white">
+                <p className="text-xs font-bold text-teal-300">Live Mentorship in Action</p>
+                <p className="text-[11px] text-slate-300">Small interactive groups led directly by Indian IT practitioners</p>
               </div>
             </div>
 
-            <ul className="space-y-3.5 text-xs sm:text-sm text-slate-300">
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                <span><strong>Zero Theory Fluff:</strong> Every syllabus module directly answers a recurring corporate interview question.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                <span><strong>Dedicated Track Mentors:</strong> Not guest lecturers — consistent industry architects guiding your entire journey.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                <span><strong>ATS Profile Rebuild:</strong> Your resume and LinkedIn rewritten to pass enterprise recruiter algorithms.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                <span><strong>Support Till You Get Placed:</strong> Continuous mock interviews, referral sharing, and offer negotiation help.</span>
-              </li>
-            </ul>
-
-            <div className="pt-2 border-t border-slate-800">
-              <div className="text-[11px] text-slate-400 italic">
-                "We don't teach to fill hours. We train so you crack your very first interview with authority."
+            <div className="bg-gradient-to-br from-slate-900 to-slate-950 p-6 sm:p-7 rounded-3xl text-white shadow-xl space-y-5 border border-slate-800">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-white">The Snow IT Commitment</h3>
+                  <p className="text-xs text-slate-400">Our promise to every enrolled candidate</p>
+                </div>
               </div>
+
+              <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span><strong>Zero Theory Fluff:</strong> Every module directly answers recurring enterprise interview questions.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span><strong>Dedicated Track Mentors:</strong> Consistent industry practitioners (Lavi, Disha, Aashish Sir).</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span><strong>Support Till You Get Placed:</strong> 1-on-1 mock interviews, ATS resume overhaul & recruiter referrals.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

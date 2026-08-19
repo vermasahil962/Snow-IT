@@ -111,6 +111,48 @@ export const PlacementProcessPage: React.FC<PlacementProcessPageProps> = ({
           ))}
         </div>
 
+        {/* Indian Mock Interview Visual Banner */}
+        <div className="bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-6 sm:p-8 text-white border border-slate-800 shadow-xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-800">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                alt="1-on-1 Technical Mock Interview & Placement Session"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover object-center opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <div className="absolute bottom-3 left-4 right-4">
+                <span className="text-[11px] font-bold text-teal-300 uppercase tracking-wider">Live Mock Interview Drill</span>
+                <p className="text-xs text-slate-300">1-on-1 technical evaluation before corporate recruiter calls</p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full border border-teal-500/30 text-xs font-bold">
+                <ShieldCheck className="w-4 h-4" />
+                <span>100% Interview Readiness Guarantee</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white">
+                We Test You Before Employers Do
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                You will never enter an interview unprepared. Our mentors simulate enterprise war-rooms and technical grills, providing line-by-line feedback on your scenario answers.
+              </p>
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="p-3 bg-slate-800/80 rounded-xl border border-slate-700 space-y-0.5">
+                  <div className="text-lg font-black text-teal-400">90%+</div>
+                  <div className="text-xs font-bold text-white">ATS Shortlist Rate</div>
+                </div>
+                <div className="p-3 bg-slate-800/80 rounded-xl border border-slate-700 space-y-0.5">
+                  <div className="text-lg font-black text-amber-400">120+</div>
+                  <div className="text-xs font-bold text-white">Recruitment Channels</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* FAQs on Placement */}
         <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
           <h2 className="text-xl font-black text-slate-900">

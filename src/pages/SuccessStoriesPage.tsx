@@ -140,54 +140,73 @@ export const SuccessStoriesPage: React.FC<SuccessStoriesPageProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredStories.map((story) => (
-              <div
-                key={story.id}
-                className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:border-[#169BA2] hover:shadow-xl transition-all p-6 flex flex-col justify-between space-y-5"
-              >
-                <div className="space-y-4">
-                  {/* Top CTC & Hike */}
-                  <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-black">
-                      {story.ctc} ({story.hike})
-                    </span>
-                    <span className="text-[11px] font-bold text-slate-400">
-                      {story.batch}
-                    </span>
-                  </div>
+            {filteredStories.map((story) => {
+              const avatars: Record<string, string> = {
+                '1': 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                '2': 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                '3': 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                '4': 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                '5': 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+                '6': 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces&w=200&h=200&q=80',
+              };
+              const avatar = avatars[story.id] || avatars['1'];
 
-                  {/* Candidate Info */}
-                  <div>
-                    <h3 className="text-lg font-black text-slate-900">
-                      {story.candidateName}
-                    </h3>
-                    <div className="text-xs text-slate-500 mt-1 flex flex-col gap-0.5">
-                      <span>Previous: <strong className="text-slate-700">{story.prevRole}</strong></span>
-                      <span>Placed as: <strong className="text-teal-700 font-extrabold">{story.roleTitle}</strong></span>
+              return (
+                <div
+                  key={story.id}
+                  className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:border-[#169BA2] hover:shadow-xl transition-all p-6 flex flex-col justify-between space-y-5"
+                >
+                  <div className="space-y-4">
+                    {/* Top CTC & Hike */}
+                    <div className="flex items-center justify-between">
+                      <span className="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-black">
+                        {story.ctc} ({story.hike})
+                      </span>
+                      <span className="text-[11px] font-bold text-slate-400">
+                        {story.batch}
+                      </span>
+                    </div>
+
+                    {/* Candidate Info with Avatar */}
+                    <div className="flex items-center gap-3.5">
+                      <img
+                        src={avatar}
+                        alt={story.candidateName}
+                        referrerPolicy="no-referrer"
+                        className="w-14 h-14 rounded-full object-cover object-center border-2 border-teal-500/60 shadow-xs shrink-0"
+                      />
+                      <div>
+                        <h3 className="text-lg font-black text-slate-900">
+                          {story.candidateName}
+                        </h3>
+                        <p className="text-xs text-slate-500">
+                          {story.prevRole} ➔ <strong className="text-teal-700">{story.roleTitle}</strong>
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Quote */}
+                    <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-xs text-slate-700 italic leading-relaxed">
+                      "{story.quote}"
                     </div>
                   </div>
 
-                  {/* Quote */}
-                  <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-xs text-slate-700 italic leading-relaxed">
-                    "{story.quote}"
+                  {/* Company & Placement Badge */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <div className="text-xs font-bold text-slate-500">
+                      Placed at: <strong className="text-slate-900 text-sm font-black">{story.companyName}</strong>
+                    </div>
+                    <button
+                      onClick={() => onOpenEnquiry(story.trackId)}
+                      className="text-xs font-bold text-[#169BA2] hover:underline cursor-pointer flex items-center gap-1"
+                    >
+                      <span>View Track</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
                   </div>
                 </div>
-
-                {/* Company & Placement Badge */}
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <div className="text-xs font-bold text-slate-500">
-                    Placed at: <strong className="text-slate-900 text-sm font-black">{story.companyName}</strong>
-                  </div>
-                  <button
-                    onClick={() => onOpenEnquiry(story.trackId)}
-                    className="text-xs font-bold text-[#169BA2] hover:underline cursor-pointer flex items-center gap-1"
-                  >
-                    <span>View Track</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
 
