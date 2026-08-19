@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   X, 
   Calendar, 
@@ -11,7 +11,7 @@ import {
   Users,
   Video
 } from 'lucide-react';
-import { getFormattedBatchDate, getFormattedWeekendBatchDate } from '../utils/dateUtils';
+import { getFormattedBatchDate } from '../utils/dateUtils';
 
 interface UpcomingBatchesModalProps {
   isOpen: boolean;
@@ -24,6 +24,16 @@ export const UpcomingBatchesModal: React.FC<UpcomingBatchesModalProps> = ({
   onClose,
   onOpenEnquiry,
 }) => {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const nextMondayDate = getFormattedBatchDate('full');
@@ -99,11 +109,16 @@ export const UpcomingBatchesModal: React.FC<UpcomingBatchesModalProps> = ({
           </div>
 
           <button
-            onClick={onClose}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer shrink-0 ml-4"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onClose();
+            }}
+            className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer shrink-0 ml-4 z-30"
             aria-label="Close modal"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 pointer-events-none" />
           </button>
         </div>
 

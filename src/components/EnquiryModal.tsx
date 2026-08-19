@@ -119,20 +119,25 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           </div>
         ) : (
           <div className="p-6 space-y-4 text-left">
-            {/* Quick Direct Call Bar */}
-            <div className="p-3.5 bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200/80 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#169BA2] text-white flex items-center justify-center shrink-0 shadow-xs">
+            {/* Quick Call & Desktop Callback Banner */}
+            <div className="p-4 bg-gradient-to-r from-teal-50 via-cyan-50 to-slate-50 border border-teal-200/90 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-xl bg-[#169BA2] text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
                   <PhoneCall className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-black text-slate-900">Need Immediate Help?</p>
-                  <p className="text-[11px] text-slate-600">Speak directly with our senior admission counsellor</p>
+                  <p className="text-xs sm:text-sm font-black text-slate-900">
+                    Using a desktop? Simply request a callback!
+                  </p>
+                  <p className="text-[11px] sm:text-xs text-slate-600 mt-0.5">
+                    Just drop your number below and our career counsellor will call you back within 15 minutes.
+                  </p>
                 </div>
               </div>
               <a
                 href="tel:+919560721315"
-                className="w-full sm:w-auto px-4 py-2 bg-[#169BA2] hover:bg-[#128288] text-white text-xs font-black rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-xs shrink-0"
+                className="w-full sm:w-auto px-4 py-2 bg-[#169BA2] hover:bg-[#128288] text-white text-xs font-black rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-xs shrink-0"
+                title="Direct Phone Call"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>Call +91 95607 21315</span>
@@ -141,7 +146,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
             <div className="flex items-center gap-3">
               <div className="flex-1 h-px bg-slate-200"></div>
-              <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Or Request Call Back</span>
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Drop Your Details Below</span>
               <div className="flex-1 h-px bg-slate-200"></div>
             </div>
 

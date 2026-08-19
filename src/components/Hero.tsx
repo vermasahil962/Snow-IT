@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* CTA 1 - Primary: Enquire Now */}
               <button
                 onClick={() => onOpenEnquiry()}
-                className="px-8 py-4 text-base font-extrabold text-slate-900 bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-300 hover:from-teal-300 hover:to-cyan-200 rounded-xl shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 group"
+                className="h-14 px-7 text-base font-extrabold text-slate-900 bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-300 hover:from-teal-300 hover:to-cyan-200 rounded-xl shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 group cursor-pointer"
               >
                 <span>{HERO_CONTENT.ctaPrimary}</span>
                 <ArrowRight className="w-5 h-5 text-slate-900 transition-transform group-hover:translate-x-1" />
@@ -51,16 +51,24 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* CTA 2 - Secondary: Talk to a Career Counsellor */}
               <button
-                onClick={onOpenCounsellorModal}
-                className="px-6 py-4 text-base font-bold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-teal-400/60 rounded-xl transition-all flex items-center justify-center gap-3 backdrop-blur-sm group shadow-md cursor-pointer"
-                title="Talk to Career Counsellor"
+                onClick={() => {
+                  const isMobile =
+                    typeof window !== 'undefined' &&
+                    (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                      navigator.userAgent
+                    ) ||
+                      window.innerWidth < 768);
+                  if (isMobile) {
+                    window.location.href = 'tel:+919560721315';
+                  } else {
+                    onOpenCounsellorModal();
+                  }
+                }}
+                className="h-14 px-7 text-base font-extrabold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-teal-400/60 rounded-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 backdrop-blur-sm group shadow-md cursor-pointer"
+                title="Call +91 95607 21315 or Request Callback"
               >
-                <div className="w-9 h-9 rounded-lg bg-teal-500/20 text-teal-300 flex items-center justify-center group-hover:bg-teal-400 group-hover:text-slate-900 transition-colors shrink-0">
-                  <PhoneCall className="w-4 h-4 animate-pulse" />
-                </div>
-                <span className="text-sm sm:text-base font-bold text-slate-200 group-hover:text-white">
-                  Talk to Career Counsellor
-                </span>
+                <PhoneCall className="w-5 h-5 text-teal-300 group-hover:text-teal-200 transition-transform group-hover:scale-110" />
+                <span>Talk to Career Counsellor</span>
               </button>
             </div>
 
@@ -95,69 +103,42 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Right Column: Interactive Quick Card / Feature Preview */}
           <div className="lg:col-span-5">
-            <div className="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 sm:p-7 shadow-2xl backdrop-blur-md relative overflow-hidden">
+            <div className="bg-slate-800/70 border border-slate-700/70 rounded-2xl p-6 sm:p-7 shadow-xl backdrop-blur-md relative overflow-hidden">
               
-              {/* Header inside Card with Indian Mentor Avatars */}
-              <div className="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-5">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
-                      Live Programs
-                    </span>
-                    <span className="flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                      Google Meet Live
-                    </span>
-                  </div>
+              {/* Clean Header */}
+              <div className="flex items-center justify-between border-b border-slate-700/70 pb-4">
+                <div className="space-y-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-teal-400">
+                    Live Programs
+                  </span>
                   <h2 className="text-base sm:text-lg font-bold text-white">
-                    3 Tracks · Dedicated Mentors
+                    Explore Fast-Track Batches
                   </h2>
                 </div>
-
-                {/* Overlapping Indian Mentor Avatars */}
-                <div className="flex items-center -space-x-2">
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
-                    alt="Mentor Lavi - ITSM"
-                    title="Mentor Lavi - IT Process Manager"
-                    referrerPolicy="no-referrer"
-                    className="w-9 h-9 rounded-full border-2 border-slate-900 object-cover object-center bg-slate-800"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
-                    alt="Mentor Disha - ServiceNow"
-                    title="Mentor Disha - ServiceNow Developer"
-                    referrerPolicy="no-referrer"
-                    className="w-9 h-9 rounded-full border-2 border-slate-900 object-cover object-center bg-slate-800"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
-                    alt="Mentor Aashish Sir - GenAI"
-                    title="Mentor Aashish Sir - GenAI & Data Science"
-                    referrerPolicy="no-referrer"
-                    className="w-9 h-9 rounded-full border-2 border-slate-900 object-cover object-center bg-slate-800"
-                  />
-                </div>
+                <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Google Meet Live
+                </span>
               </div>
 
               {/* 3 Tracks Preview Cards */}
-              <div className="space-y-3">
+              <div className="space-y-3 mt-4">
                 {/* Track 1 */}
                 <div
                   onClick={() => onOpenEnquiry('it-process-manager')}
-                  className="group bg-slate-900/80 hover:bg-slate-900 border border-slate-700 hover:border-teal-500/60 rounded-xl p-3.5 transition-all cursor-pointer flex items-center justify-between"
+                  className="group bg-slate-900/60 hover:bg-slate-900/90 border border-slate-700/70 hover:border-teal-500/60 rounded-xl p-4 transition-all cursor-pointer flex items-center justify-between"
                 >
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-left">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-bold text-white group-hover:text-teal-300 transition-colors">
                         IT Process Manager
                       </span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-800 rounded-md">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-800/70 rounded-md">
                         No Coding
                       </span>
                     </div>
                     <p className="text-xs text-slate-400">
-                      21 Days · Mentor: Lavi · 5–35 LPA
+                      21 Days · 5–35 LPA · Mentor: Lavi
                     </p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-teal-400 transition-transform group-hover:translate-x-1 shrink-0" />
@@ -166,19 +147,19 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Track 2 */}
                 <div
                   onClick={() => onOpenEnquiry('servicenow-developer')}
-                  className="group bg-slate-900/80 hover:bg-slate-900 border border-slate-700 hover:border-blue-500/60 rounded-xl p-3.5 transition-all cursor-pointer flex items-center justify-between"
+                  className="group bg-slate-900/60 hover:bg-slate-900/90 border border-slate-700/70 hover:border-blue-500/60 rounded-xl p-4 transition-all cursor-pointer flex items-center justify-between"
                 >
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-left">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors">
                         ServiceNow Developer
                       </span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-950 text-blue-300 border border-blue-800 rounded-md">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-950 text-blue-300 border border-blue-800/70 rounded-md">
                         CSA / CAD
                       </span>
                     </div>
                     <p className="text-xs text-slate-400">
-                      21 Days · Mentor: Disha · 70% Practical
+                      21 Days · 70% Practical · Mentor: Disha
                     </p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-transform group-hover:translate-x-1 shrink-0" />
@@ -187,19 +168,19 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Track 3 */}
                 <div
                   onClick={() => onOpenEnquiry('applied-genai-data-science')}
-                  className="group bg-slate-900/80 hover:bg-slate-900 border border-slate-700 hover:border-amber-500/60 rounded-xl p-3.5 transition-all cursor-pointer flex items-center justify-between"
+                  className="group bg-slate-900/60 hover:bg-slate-900/90 border border-slate-700/70 hover:border-amber-500/60 rounded-xl p-4 transition-all cursor-pointer flex items-center justify-between"
                 >
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-left">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
                         Applied GenAI & Data Science
                       </span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-amber-950 text-amber-300 border border-amber-800 rounded-md">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-amber-950 text-amber-300 border border-amber-800/70 rounded-md">
                         Agentic AI
                       </span>
                     </div>
                     <p className="text-xs text-slate-400">
-                      60 Days · Mentor: Aashish Sir · 8–40+ LPA
+                      60 Days · 8–40+ LPA · Mentor: Aashish Sir
                     </p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-amber-400 transition-transform group-hover:translate-x-1 shrink-0" />
@@ -207,14 +188,14 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* Bottom Quick Callout in Card */}
-              <div className="mt-5 pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
-                <span className="flex items-center gap-1.5 font-medium text-slate-300">
-                  <Video className="w-4 h-4 text-emerald-400" />
+              <div className="mt-4 pt-3.5 border-t border-slate-700/70 flex items-center justify-between text-xs text-slate-300">
+                <span className="flex items-center gap-1.5 font-medium text-slate-400">
+                  <Video className="w-3.5 h-3.5 text-emerald-400" />
                   Mon–Sat Live Batches
                 </span>
                 <button
                   onClick={() => onOpenEnquiry()}
-                  className="text-teal-400 hover:text-teal-300 font-bold hover:underline"
+                  className="text-teal-400 hover:text-teal-300 font-bold hover:underline cursor-pointer"
                 >
                   Apply for Next Batch →
                 </button>

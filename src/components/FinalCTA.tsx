@@ -35,11 +35,11 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
         </p>
 
         {/* Action Buttons */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
           {/* CTA 1 — Primary: Enquire Now */}
           <button
             onClick={onOpenEnquiry}
-            className="w-full sm:w-auto px-8 py-4 text-base font-extrabold text-slate-900 bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-300 hover:from-teal-300 hover:to-cyan-200 rounded-xl shadow-xl shadow-teal-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto shrink-0 px-8 py-4 text-base font-extrabold text-slate-900 bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-300 hover:from-teal-300 hover:to-cyan-200 rounded-xl shadow-xl shadow-teal-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group whitespace-nowrap cursor-pointer"
           >
             <span>Enquire Now</span>
             <ArrowRight className="w-5 h-5 text-slate-900 transition-transform group-hover:translate-x-1" />
@@ -48,7 +48,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
           {/* CTA 2 — Secondary: Compare All Three Programs */}
           <button
             onClick={onOpenComparison}
-            className="w-full sm:w-auto px-6 py-4 text-base font-bold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 rounded-xl transition-all flex items-center justify-center gap-2.5 backdrop-blur-sm"
+            className="w-full sm:w-auto shrink-0 px-7 py-4 text-base font-bold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 rounded-xl transition-all flex items-center justify-center gap-2.5 backdrop-blur-sm whitespace-nowrap cursor-pointer"
           >
             <BookOpen className="w-4 h-4 text-teal-400" />
             <span>Compare All Three Programs</span>
